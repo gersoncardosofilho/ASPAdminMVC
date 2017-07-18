@@ -44,5 +44,10 @@ namespace Repository.DAL.Repositories.Base
         {
             return ctx.Set<TEntity>();
         }
+
+        public void SaveAll()
+        {
+            ctx.SaveChanges();
+        }
     }
 }

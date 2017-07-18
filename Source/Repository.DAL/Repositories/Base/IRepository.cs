@@ -14,6 +14,7 @@ namespace Repository.DAL.Repositories.Base
         void AddUser(TEntity obj);
         void ChangeUserProfile(TEntity obj);
         void DeleteUser(Func<TEntity, bool> predicate);
+        void SaveAll();
 
 
     }
