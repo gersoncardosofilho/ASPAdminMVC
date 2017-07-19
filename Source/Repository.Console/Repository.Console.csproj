@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Repository.Console</RootNamespace>
     <AssemblyName>Repository.Console</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -57,13 +58,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Repository.Entities\Repository.Entities.csproj">
-      <Project>{93705183-4621-4994-9223-189187324ebb}</Project>
-      <Name>Repository.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Repository.DAL\Repository.DAL.csproj">
       <Project>{56745506-7c87-4754-9675-95fea7b42e2a}</Project>
       <Name>Repository.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository.Entities\Repository.Entities.csproj">
+      <Project>{93705183-4621-4994-9223-189187324ebb}</Project>
+      <Name>Repository.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
