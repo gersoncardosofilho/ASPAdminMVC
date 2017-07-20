@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Repository.DAL.Context
 {
-    class DatabaseContext : DbContext
+    public class DatabaseContext : DbContext
     {
         public DatabaseContext() : base("ConnDB")
         {

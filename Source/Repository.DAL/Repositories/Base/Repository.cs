@@ -1,5 +1,6 @@
 ﻿using Repository.DAL.Context;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Repository.DAL.Repositories.Base
@@ -48,6 +49,42 @@ namespace Repository.DAL.Repositories.Base
         public void SaveAll()
         {
             ctx.SaveChanges();
+        }
+    }
+
+
+    //Nicius predicate class
+    class Person
+    {
+        int age;
+
+        Predicate<int> isUnderage = (age) => {
+            return age < 18;
+        };
+
+        Predicate<int> isAdult = (age) => {
+            return age > 18;
+        };
+
+        Predicate<int> isElder  = (age) => {
+            return age > 65;
+        };
+
+        public bool ValidateAge(Predicate<int> predicate)
+        {
+            if (this.age > 200)
+                throw new Exception("age invalid");
+
+            return predicate.Invoke(this.age);
+        }
+
+        bool IssueFreeTransport()
+        {
+            // without predicate
+            //return ValidateAge((i) => { return i < 18; }) && ValidateAge((i) => { return i >= 65; });
+
+            // with predicate
+            return ValidateAge(isUnderage) && ValidateAge(isElder);
         }
     }
 }
